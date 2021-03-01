@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>book detail</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <book-detail title="panduan praktis menguasai vue.js" author="lutfi gani" year="2018"></book-detail>
+        <book-detail title="1111" author="2222" year="3333"></book-detail>
+    </div>
+
+    <template id="bookdetail">
+        <div>
+            <h2>book detail</h2>
+            <h3>{{ title }}</h3>
+            <p>author: {{ author }}</p>
+            <p>year: {{ year }}</p>
+            <hr>
+        </div>
+    </template>
+
+    <script>
+        Vue.component('book-detail', {
+            template: "#bookdetail",
+            props: ['title', 'author', 'year']
+        })
+
+        var app = new Vue({
+            el: "#app"
+        })
+
+    </script>
+
+</body>
+</html>
